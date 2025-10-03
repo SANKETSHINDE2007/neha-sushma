@@ -1,0 +1,193 @@
+/* --- General & Body --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+main.container {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+/* --- Navigation --- */
+nav {
+    background: #ffffff;
+    color: #333;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+nav h1 {
+    margin: 0;
+    color: #0056b3;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.user-email {
+    font-size: 0.9em;
+    color: #555;
+}
+.nav-link {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: 500;
+}
+.nav-button, button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.6em 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+.nav-button:hover, button:hover {
+    background: #0056b3;
+}
+
+/* --- Search Bar --- */
+.search-bar {
+    margin-bottom: 2em;
+}
+#search {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* --- Books Container & Cards --- */
+#booksContainer, #adminBooksContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5em;
+}
+.book-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+.book-card:hover {
+    transform: translateY(-5px);
+}
+.book-cover {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.book-info {
+    padding: 1em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.book-info h3 {
+    margin: 0 0 0.2em 0;
+    font-size: 1.1em;
+}
+.book-info p {
+    margin: 0.2em 0;
+    font-size: 0.9em;
+    color: #666;
+}
+.book-info .category {
+    background-color: #eef;
+    color: #0056b3;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    font-size: 0.8em;
+    align-self: flex-start;
+    margin-top: 0.5em;
+}
+.view-button {
+    margin-top: auto; /* Pushes button to the bottom */
+    width: 100%;
+}
+
+/* --- Admin Specific --- */
+.admin-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+.book-cover-small {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+}
+.delete-button {
+    background-color: #dc3545;
+}
+.delete-button:hover {
+    background-color: #c82333;
+}
+.add-book-form {
+    background: white;
+    padding: 2em;
+    border-radius: 8px;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.add-book-form h2 {
+    margin-top: 0;
+}
+.add-book-form input, .add-book-form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+.add-book-form input[type="file"] {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+}
+
+/* --- Auth Page --- */
+.auth-container {
+    max-width: 400px;
+    margin: 5em auto;
+    padding: 2em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.auth-container input {
+    margin-bottom: 1em;
+    padding: 0.8em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Utilities --- */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 2em auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.error-message { color: #dc3545; font-size: 0.9em; margin-top: 0.5em;}
+.success-message { color: #28a745; font-size: 0.9em; margin-top: 0.5em;}

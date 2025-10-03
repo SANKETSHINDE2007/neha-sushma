@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <h1>Admin Dashboard</h1>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-link">Back to Library</a>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="add-book-form">
+    <h2>Add New Book</h2>
+    <form id="addBookForm">
+      <input id="b_title" placeholder="Title" required>
+      <input id="b_author" placeholder="Author" required>
+      <input id="b_category" placeholder="Category" required>
+      <input id="b_pdf_url" placeholder="PDF Link (Google Drive, Dropbox, etc.)" required>
+      <label for="b_cover">Cover Image:</label>
+      <input type="file" id="b_cover" accept="image/*" required>
+      <button type="submit" id="addBookBtn">Add Book</button>
+      <p id="form-message"></p>
+    </form>
+  </section>
+
+  <section id="adminBooksContainer">
+      <div class="loader"></div>
+  </section>
+</main>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>
